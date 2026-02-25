@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Quiz - Instant Feedback</title>
+    <title>PH Financial Reporting Quiz</title>
     <style>
         :root {
             --primary: #2c3e50;
@@ -13,12 +13,11 @@
             --light: #f4f7f6;
         }
 
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--light); padding: 20px; display: flex; justify-content: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light); padding: 20px; display: flex; justify-content: center; }
         #quiz-container { background: white; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         
-        .question { display: none; }
-        .question.active { display: block; }
-        .question-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; line-height: 1.5; }
+        h1 { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 0; }
+        .question-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; color: #333; line-height: 1.5; white-space: pre-line; }
 
         .options-list { list-style: none; padding: 0; }
         .option-item {
@@ -27,25 +26,29 @@
             margin-bottom: 10px;
             padding: 12px 15px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.2s;
         }
+        .option-item:hover { border-color: var(--secondary); background: #f0f8ff; }
+        .option-item.selected { border-color: var(--secondary); background: #e1f0fa; }
 
-        /* Feedback Colors */
+        /* Feedback Styles */
         .option-item.correct { background-color: #d4edda !important; border-color: var(--success) !important; color: #155724; font-weight: bold; }
         .option-item.wrong { background-color: #f8d7da !important; border-color: var(--error) !important; color: #721c24; }
         .option-item.disabled { pointer-events: none; }
 
-        .controls { margin-top: 20px; display: flex; gap: 10px; flex-direction: column; }
-        button { padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; }
+        .controls { margin-top: 20px; display: flex; gap: 10px; }
+        button { padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; transition: 0.3s; }
         #check-btn { background: var(--secondary); }
         #next-btn { background: var(--primary); display: none; }
-        #results { margin-top: 20px; display: none; text-align: center; }
+        
+        #results { margin-top: 20px; text-align: center; display: none; padding: 30px; background: #fff; border: 3px solid var(--secondary); border-radius: 15px; }
+        .percentage { font-size: 2.5rem; color: var(--secondary); font-weight: 800; margin: 10px 0; }
     </style>
 </head>
 <body>
 
 <div id="quiz-container">
-    <h1 id="title">Financial Reporting Quiz</h1>
+    <h1 id="main-title">Accounting Quiz</h1>
     <div id="quiz-body"></div>
 
     <div class="controls">
@@ -58,68 +61,69 @@
 
 <script>
     const quizData = [
-        { q: "Which statement is true for financial reporting in the Philippines? (I) Current before non-current (II) Order of Notes (III) 'Reserves' definition.", options: ["a", "b", "c", "d"], correct: "b", fullOptions: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and II"] },
-        { q: "An entity purchases a building via equity shares and debentures. Treatment in Cash Flow?", options: ["a", "b", "c", "d"], correct: "c", fullOptions: ["a. Investing and Financing outflows", "b. Mixture of Investing/Financing", "c. Non-cash; disclosed in notes", "d. Ignore totally"] },
-        // ... Add more here following the same structure
+        { q: "Which of the following statements is (are) true, for purposes of financial reporting in the Philippines?\nI. Philippine practice is to present current assets before non-current, current liabilities before non-current, and equity before liabilities.\nII. Notes order: Policies, Compliance, Supporting Info, Other Disclosures.\nIII. 'Reserves' may refer to revaluation increment, translation adjustments, and unrealized gains/losses.", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "b" },
+        { q: "An entity purchases a building via equity shares and debentures. This transaction should be treated in the cash flow statement as follows:", options: ["a. Investing and financing cash outflows", "b. Building as investing, debentures as financing, shares as investing", "c. Does not belong in cash flow; disclosed only in notes", "d. Ignore totally"], correct: "c" },
+        { q: "The scope of PAS 39 includes all of the following except:", options: ["a. Financial assets", "b. Financial liabilities", "c. Equity instruments issued by the entity", "d. Contracts for non-financial items settled net"], correct: "c" },
+        { q: "Deposits in foreign countries subject to foreign exchange restrictions should be:", options: ["a. Current rates / Current assets", "b. Historical rates / Noncurrent assets", "c. Current rates / Noncurrent assets", "d. Historical rates / Current assets"], correct: "c" },
+        { q: "What is the proper accounting for credit card sales if the company is Affiliated vs Not Affiliated with a bank?", options: ["a. Sale on account / Cash sale", "b. Sale on account / Sale on account", "c. Cash sale / Cash sale", "d. Cash sale / Sale on account"], correct: "d" },
+        { q: "Losses from firm and non-cancellable purchase commitments for inventory should be:", options: ["a. Recognized as Loss and Estimated Liability", "b. Disclosed in notes", "c. Ignored", "d. Charged to retained earnings"], correct: "a" },
+        { q: "Delta Corp purchased 7,400 shares (actively traded). How should Delta account for this?", options: ["a. Cost method", "b. Equity method", "c. Cost method subject to fair value", "d. Market value method subject to fair value"], correct: "c" },
+        { q: "Which regarding Investment Property is true?\nI. Measured initially at cost\nII. Transaction costs included\nIII. Choice of fair value or cost model", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "d" },
+        { q: "In determining fair value of a biological asset, which should be considered?", options: ["a. Price change", "b. Physical change", "c. Both price and physical change", "d. Neither"], correct: "c" },
+        { q: "Treasury stock acquired at price > par/issue but < book value. Impact on TSE and NBV?", options: ["a. SE: decrease; NBV: increase", "b. SE: increase; NBV: decrease", "c. SE: decrease; NBV: decrease", "d. SE: increase; NBV: increase"], correct: "a" },
+        { q: "Measurement basis for non-monetary exchange (With vs Without Commercial Substance):", options: ["a. FV of asset given / Carrying amt given", "b. Carrying amt given / Carrying amt received", "c. Carrying amt received / FV of asset received", "d. FV of asset given / FV of asset given"], correct: "a" },
+        { q: "Which statement concerning borrowing costs is FALSE?", options: ["a. Includes interest, bank overdrafts, etc.", "b. Costs incurred in relation to borrowed funds", "c. PAS 23 benchmark is to capitalize", "d. Includes exchange differences"], correct: "c" },
+        { q: "Additional revenue from contract variation is allowed under PAS 11 if:", options: ["a. Negotiations advanced/probable acceptance", "b. Standards will be exceeded", "c. Probable approval and reliably measured", "d. Probable approval whether measured or not"], correct: "c" },
+        { q: "Under IAS 20, recognizing intangible assets from government grants (Free/Nominal):", options: ["a. I only (Fair Value)", "b. Either I or II", "c. II only (Nominal)", "d. Neither"], correct: "b" },
+        { q: "Arguments for the 'Income Approach' for government grants include except:", options: ["a. Earned through compliance", "b. Receipts from non-shareholders", "c. Incentive without related costs", "d. Extension of fiscal policies"], correct: "c" }
     ];
-
-    // Note: I simplified the quizData object above for the code block, 
-    // but you should use your full question text from the previous version.
 
     let currentIdx = 0;
     let score = 0;
-    let selectedLetter = null;
+    let selectedIdx = null;
 
     function loadQuestion() {
         const qData = quizData[currentIdx];
         const quizBody = document.getElementById('quiz-body');
         
         quizBody.innerHTML = `
-            <div class="question active">
-                <div class="question-text">${currentIdx + 1}. ${qData.q}</div>
-                <ul class="options-list">
-                    ${qData.fullOptions.map((opt, i) => `
-                        <li class="option-item" id="opt-${i}" onclick="select(${i}, '${String.fromCharCode(97+i)}')">
-                            ${opt}
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
+            <div class="question-text">${currentIdx + 1}. ${qData.q}</div>
+            <ul class="options-list">
+                ${qData.options.map((opt, i) => `
+                    <li class="option-item" id="opt-${i}" onclick="select(${i})">${opt}</li>
+                `).join('')}
+            </ul>
         `;
         document.getElementById('check-btn').style.display = 'block';
         document.getElementById('next-btn').style.display = 'none';
-        selectedLetter = null;
+        selectedIdx = null;
     }
 
-    window.select = (index, letter) => {
-        const options = document.querySelectorAll('.option-item');
-        options.forEach(o => o.style.borderColor = '#ddd');
-        document.getElementById(`opt-${index}`).style.borderColor = 'var(--secondary)';
-        selectedLetter = letter;
+    window.select = (i) => {
+        document.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+        document.getElementById(`opt-${i}`).classList.add('selected');
+        selectedIdx = i;
     };
 
     window.checkAnswer = () => {
-        if (!selectedLetter) return alert("Please select an answer first!");
-
+        if (selectedIdx === null) return alert("Please pick an answer!");
+        
         const qData = quizData[currentIdx];
-        const options = document.querySelectorAll('.option-item');
+        const correctLetter = qData.correct; // "a", "b", etc.
+        const selectedLetter = String.fromCharCode(97 + selectedIdx);
+        
+        const items = document.querySelectorAll('.option-item');
+        items.forEach((item, i) => {
+            item.classList.add('disabled');
+            const currentLetter = String.fromCharCode(97 + i);
+            if (currentLetter === correctLetter) item.classList.add('correct');
+            if (currentLetter === selectedLetter && selectedLetter !== correctLetter) item.classList.add('wrong');
+        });
+
+        if (selectedLetter === correctLetter) score++;
         
         document.getElementById('check-btn').style.display = 'none';
         document.getElementById('next-btn').style.display = 'block';
-
-        options.forEach((el, i) => {
-            el.classList.add('disabled');
-            const letter = String.fromCharCode(97 + i);
-            
-            if (letter === qData.correct) {
-                el.classList.add('correct'); // Highlight the right answer
-            }
-            if (letter === selectedLetter && selectedLetter !== qData.correct) {
-                el.classList.add('wrong'); // Highlight the wrong choice if user picked it
-            }
-        });
-
-        if (selectedLetter === qData.correct) score++;
     };
 
     window.nextQuestion = () => {
@@ -132,12 +136,20 @@
     };
 
     function showResults() {
-        document.getElementById('quiz-body').innerHTML = "";
+        document.getElementById('quiz-body').style.display = "none";
         document.getElementById('next-btn').style.display = 'none';
-        document.getElementById('title').innerText = "Quiz Results";
-        const res = document.getElementById('results');
-        res.style.display = 'block';
-        res.innerHTML = `<h2>Score: ${score} / ${quizData.length}</h2><button onclick="location.reload()" style="background:var(--secondary)">Restart</button>`;
+        document.getElementById('main-title').innerText = "Review Finished";
+        
+        const percent = ((score / quizData.length) * 100).toFixed(0);
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.style.display = 'block';
+        
+        resultsDiv.innerHTML = `
+            <h3>Final Score</h3>
+            <div class="percentage">${percent}%</div>
+            <p>You got <strong>${score}</strong> out of ${quizData.length} correct.</p>
+            <button onclick="location.reload()" style="background:var(--secondary); margin-top:15px;">Try Again</button>
+        `;
     }
 
     loadQuestion();
