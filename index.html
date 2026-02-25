@@ -61,48 +61,48 @@
 
 <script>
     const quizData = [
-        // { q: "Which of the following statements is (are) true, for purposes of financial reporting in the Philippines?\nI. Philippine practice is to present current assets before non-current, current liabilities before non-current, and equity before liabilities.\nII. Notes order: Policies, Compliance, Supporting Info, Other Disclosures.\nIII. 'Reserves' may refer to revaluation increment, translation adjustments, and unrealized gains/losses.", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "b" },
-        // { q: "An entity purchases a building via equity shares and debentures. This transaction should be treated in the cash flow statement as follows:", options: ["a. Investing and financing cash outflows", "b. Building as investing, debentures as financing, shares as investing", "c. Does not belong in cash flow; disclosed only in notes", "d. Ignore totally"], correct: "c" },
-        // { q: "The scope of PAS 39 includes all of the following except:", options: ["a. Financial assets", "b. Financial liabilities", "c. Equity instruments issued by the entity", "d. Contracts for non-financial items settled net"], correct: "c" },
-        // { q: "Deposits in foreign countries subject to foreign exchange restrictions should be:", options: ["a. Current rates / Current assets", "b. Historical rates / Noncurrent assets", "c. Current rates / Noncurrent assets", "d. Historical rates / Current assets"], correct: "c" },
-        // { q: "What is the proper accounting for credit card sales if the company is Affiliated vs Not Affiliated with a bank?", options: ["a. Sale on account / Cash sale", "b. Sale on account / Sale on account", "c. Cash sale / Cash sale", "d. Cash sale / Sale on account"], correct: "d" },
-        // { q: "Losses from firm and non-cancellable purchase commitments for inventory should be:", options: ["a. Recognized as Loss and Estimated Liability", "b. Disclosed in notes", "c. Ignored", "d. Charged to retained earnings"], correct: "a" },
-        // { q: "Delta Corp purchased 7,400 shares (actively traded). How should Delta account for this?", options: ["a. Cost method", "b. Equity method", "c. Cost method subject to fair value", "d. Market value method subject to fair value"], correct: "c" },
-        // { q: "Which regarding Investment Property is true?\nI. Measured initially at cost\nII. Transaction costs included\nIII. Choice of fair value or cost model", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "d" },
-        // { q: "In determining fair value of a biological asset, which should be considered?", options: ["a. Price change", "b. Physical change", "c. Both price and physical change", "d. Neither"], correct: "c" },
-        // { q: "Treasury stock acquired at price > par/issue but < book value. Impact on TSE and NBV?", options: ["a. SE: decrease; NBV: increase", "b. SE: increase; NBV: decrease", "c. SE: decrease; NBV: decrease", "d. SE: increase; NBV: increase"], correct: "a" },
-        // { q: "Measurement basis for non-monetary exchange (With vs Without Commercial Substance):", options: ["a. FV of asset given / Carrying amt given", "b. Carrying amt given / Carrying amt received", "c. Carrying amt received / FV of asset received", "d. FV of asset given / FV of asset given"], correct: "a" },
-        // { q: "Which statement concerning borrowing costs is FALSE?", options: ["a. Includes interest, bank overdrafts, etc.", "b. Costs incurred in relation to borrowed funds", "c. PAS 23 benchmark is to capitalize", "d. Includes exchange differences"], correct: "c" },
-        // { q: "Additional revenue from contract variation is allowed under PAS 11 if:", options: ["a. Negotiations advanced/probable acceptance", "b. Standards will be exceeded", "c. Probable approval and reliably measured", "d. Probable approval whether measured or not"], correct: "c" },
-        // { q: "Under IAS 20, recognizing intangible assets from government grants (Free/Nominal):", options: ["a. I only (Fair Value)", "b. Either I or II", "c. II only (Nominal)", "d. Neither"], correct: "b" },
-        // { q: "Arguments for the 'Income Approach' for government grants include except:", options: ["a. Earned through compliance", "b. Receipts from non-shareholders", "c. Incentive without related costs", "d. Extension of fiscal policies"], correct: "c" }
-        // { q: "Holder H altered the amount of a negotiable note from P10,000 to P100,000 then negotiated the note to I. As a result:", options: ["a. If I is a holder in due course, he can require the maker to pay P100,000", "b. If I is not a holder in due course, he can require the maker to pay the sum of P100,000", "c. I cannot require the maker to pay because of the forgery whether or not he is a holder in due course", "d. I is entitled to P10,000 if he is a holder in due course"], correct: "d" },
-        // { q: "To call a meeting for the purpose of removing a director of a corporation the required votes of the stockholders is:", options: ["a. majority of the stockholders present", "b. 3/4 of the outstanding capital stock", "c. 2/3 of the outstanding capital stock", "d. majority of the outstanding capital stock"], correct: "d" },
-        // { q: "Which of the following instruments is negotiable?", options: ["a. \"Pay to Bearer C P10,000.00\"", "b. \"Pay to C P10,000.00 or his order out of the rental of my house in Manila\"", "c. \"Pay to C P10,000.00 and reimburse yourself out of the rental of my house in Manila\"", "d. \"Pay to the order of C P10,000.00\""], correct: "d" },
-        // { q: "Paolo contributed P50,000; Ronald contributed P75,000; and Paul contributed P25,000. Jay is the industrial partner. There is no stipulation regarding profits and losses. The partnership suffered a P300,000 loss. The loss shall be shared by the partners as follows:", options: ["a. P100,000; P100,000; P100,000; and P0", "b. P75,000; P75,000; P75,000; and P75,000", "c. P100,000; P150,000; P50,000; and P0", "d. P100,000; P100,000; P100,000; and P100,000"], correct: "c" },
-        // { q: "Case No. 1 - Pedro, manager of XYZ Corp, prepared a board resolution signed individually by a majority of directors for a salary increase. The treasurer refuses to pay, stating it is invalid. Is the treasurer correct?\nCase No. 2 - Jose found a buyer (Pedro) for Maria's land. Maria cancelled the sale but later sold it to Pedro privately. Is Jose entitled to commission?", options: ["a. YES; YES", "b. YES; NO", "c. NO; NO", "d. NO; YES"], correct: "a" },
-        // { q: "1st Statement: Melody bound herself to pay Lucas her indebtedness. \"I promise to pay Lucas or order the amount of Php100,000\". Sgd. Melody. The instrument is non-negotiable.\n2nd Statement: Mila gave Malou a check with blank amount. Mila instructed P1,000, but Malou placed Php100,000 and negotiated to Marissa (HDC).", options: ["a. 1st statement is wrong, 2nd statement is correct", "b. 1st statement is correct, 2nd statement is wrong", "c. Both statements are correct", "d. Both statements are wrong"], correct: "a" },
-        // { q: "Maggie makes a promissory note for P40,000 to Homer. Homer negotiates to Margie, who indorse to Henry. Henry raises the amount to P100,000 with the consent of Henry then indorse to Hilary, then to Menandro, then to Helen (HDC). In this case:", options: ["a. Helen can recover P40,000 as against Maggie.", "b. Helen can recover P100,000 from Maggie.", "c. Menandro and Melissa are liable to Helen for P40,000", "d. Maggie and Homer are not liable to Helen."], correct: "a" },
-        // { q: "X-cited Limited partnership has X as general partner, Y as limited partner, and Z as industrial partner contributing P150,000; P500,000; and services. The partnership failed with an outstanding obligation of P120,000. Liability is:", options: ["a. X = P120,000", "b. X and Z = solidarily liable for P120,000", "c. X = P40,000; Y = P40,000; Z = P40,000", "d. X = P60,000; Y = P0; Z = P60,000"], correct: "d" },
-        // { q: "Which among the following statements is NOT correct?", options: ["a. BIR is part of the machinery for internal revenue taxes.", "b. Bureau of Customs is charged with collection of internal revenue taxes.", "c. Local government units form part of the national tax system.", "d. Private banks may be authorized to collect internal revenue taxes."], correct: "c" },
-        // { q: "Properties acquired by gratuitous title during the marriage are generally classified as:\nI. Separate properties under conjugal partnership of gains.\nII. Community properties under absolute community of properties.", options: ["a. Only I is correct", "b. Only II is correct", "c. Both I and II are correct", "d. Both I and II are incorrect"], correct: "a" },
-        // { q: "A resident decedent, head of family, left the following: Personal properties P1,000,000; Real properties (including P1.5M family home) P2,000,000; Deductions P900,000. How much was the taxable net estate?", options: ["a. P250,000", "b. P1,100,000", "c. P1,250,000", "d. P2,100,000"], correct: "a" },
-        // { q: "Marzan sold his residential house in 2008: Cash P100k; June receipt P100k; 2009 installment P600k. Cost P150k; Mortgage assumed P200k; Buyer's mortgage to seller P600k; FMV P900k. What is capital gains tax due in 2008?", options: ["a. P15,882", "b. P17,647", "c. P54,000", "d. P60,000"], correct: "b" }
-        // { q: "Which of the following government-owned or controlled corporations shall be subject to the corporate income tax?\nI. Philippine Amusement and Gaming Corporation (PAGCOR).\nII. National Development Corporation (NDC).\nIII. Philippine Charity Sweepstakes Office (PCSO).\nIV. Social Security System (SSS).", options: ["a. I and II", "b. II and III", "c. III only", "d. I, II, III and IV"], correct: "c" },
-        // { q: "The following fringe benefits were given by an employer to its employees for the quarter ending March 31, 2008:\nHousing benefits to supervisors and managers (total rents): P340,000\nReimbursed expenses of rank and file employees: 200,000\nDe minimis benefits (not exceeding maximum): 100,000\nHow much was the fringe benefit tax payable for the quarter?", options: ["a. P80,000", "b. P108,800", "c. P160,000", "d. P172,800"], correct: "a" },
-        // { q: "The BIR may compromise payment of internal revenue taxes when:\nFirst ground: A reasonable doubt as to the validity of the claim against the taxpayer exists.\nSecond ground: When collection costs do not justify the collection of the tax.", options: ["a. Both grounds are correct", "b. Both grounds are incorrect", "c. Only first ground is correct", "d. Only second ground is correct"], correct: "c" },
-        // { q: "AUDITING THEORY: The need for assurance services arises because:", options: ["a. There is a consonance of interests of the preparer and the user of the financial statements.", "b. There is a potential bias in providing information.", "c. Economic transactions are less complex than they were a decade ago.", "d. Most users today have access to the system that generates the financial statements they use."], correct: "b" },
-        // { q: "Which of the following is explicitly included in the Auditor’s responsibility section of the auditor's report?", options: ["a. Reason for modification of opinion", "b. \"Philippine Financial Reporting Standards\"", "c. \"Philippines Standards on Auditing\"", "d. Division of responsibility with another auditor"], correct: "c" },
-        // { q: "The term \"present fairly, in all material respect\", means:", options: ["a. The financial statements conform to GAAP.", "b. The auditor considers only those matters that are significant to the users of the financial statements.", "c. The financial statements may still be materially misstated because the auditors may not have discovered the errors.", "d. The financial statements are accurately prepared."], correct: "b" },
-        // { q: "Based on R.A. 9298, how many years can a partner who survived the death or withdrawal of other partner(s) continue to practice under the partnership name after becoming a sole practitioner?", options: ["a. 1 year", "b. 2 years", "c. 3 years", "d. Indefinite period of time"], correct: "b" },
-        // { q: "An auditor who discovers that client employees have committed an illegal act that has a material effect on the client's financial statements most likely would withdraw from the engagement if:", options: ["a. The illegal act is violation of generally accepted accounting principles.", "b. The client does not take the remedial action that the auditor considers necessary.", "c. The illegal act was committed during a prior year that was not audited.", "d. The auditor has already assessed control risk at the minimum level."], correct: "b" },
-        // { q: "Which of the following statements would least likely appear in an auditor's engagement letter?", options: ["a. Fees for our services are based on our regular per diem rates, plus travel and other out-of-pocket expenses.", "b. During the course of our audit we may observe opportunities for economy in, or improved controls over, your operations.", "c. Our engagement is subject to the risk that material errors or fraud, including defalcations, if they exist, will not be detected.", "d. After performing our preliminary analytical procedures we will discuss with you the other procedures we consider necessary to complete the engagement."], correct: "d" },
-        // { q: "The audit work paper that reflects the major components of an amount reported in the financial statements is the:", options: ["a. Inter-bank transfer schedule", "b. Carry forward schedule", "c. Supporting schedule", "d. Lead schedule"], correct: "d" },
-        // { q: "Which of the following best describes the primary purpose of audit procedures?", options: ["a. To detect errors or fraud", "b. To comply with generally accepted accounting principles", "c. To gather sufficient, appropriate evidence", "d. To verify the accuracy of account balances"], correct: "c" },
-        // { q: "Analytical procedures used in planning an audit should focus on identifying:", options: ["a. Material weakness in the internal control system.", "b. The predictability of financial data from individual transactions.", "c. The various assertions that are embodied in the financial statements", "d. Areas that may represent specific risks relevant to the audit."], correct: "d" },
-        // { q: "As the acceptable level of detection risk decreases, an auditor may change the...", options: ["a. Timing of substantive tests; perform them at an interim date rather than at year-end", "b. Nature of substantive tests; select from less effective to a more effective procedure.", "c. Timing of tests of controls; perform them at several dates rather than at one time", "d. Assessment of inherent risk; assume a higher level."], correct: "b" },
-        // { q: "The audit work performed by each assistant should be reviewed to determine whether it was adequately performed and to evaluate whether the", options: ["a. Audit has been performed by persons having adequate technical training and proficiency as auditors.", "b. Auditor's system of quality control has been maintained at a high level.", "c. Results are consistent with the conclusions to be presented in the auditor's report.", "d. Audit procedures performed are those prescribed in the technical standards."], correct: "c" },
-        // { q: "Which of the following acts are considered a fraud?\nI. Alteration of records or documents.\nII. Misinterpretation of facts.\nIII. Misappropriation of assets.\nIV. Recording of transactions without substance.\nV. Clerical mistakes.", options: ["a. III", "b. I and III only", "c. I, III, and IV only", "d. All of them"], correct: "c" },
+        { q: "Which of the following statements is (are) true, for purposes of financial reporting in the Philippines?\nI. Philippine practice is to present current assets before non-current, current liabilities before non-current, and equity before liabilities.\nII. Notes order: Policies, Compliance, Supporting Info, Other Disclosures.\nIII. 'Reserves' may refer to revaluation increment, translation adjustments, and unrealized gains/losses.", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "b" },
+        { q: "An entity purchases a building via equity shares and debentures. This transaction should be treated in the cash flow statement as follows:", options: ["a. Investing and financing cash outflows", "b. Building as investing, debentures as financing, shares as investing", "c. Does not belong in cash flow; disclosed only in notes", "d. Ignore totally"], correct: "c" },
+        { q: "The scope of PAS 39 includes all of the following except:", options: ["a. Financial assets", "b. Financial liabilities", "c. Equity instruments issued by the entity", "d. Contracts for non-financial items settled net"], correct: "c" },
+        { q: "Deposits in foreign countries subject to foreign exchange restrictions should be:", options: ["a. Current rates / Current assets", "b. Historical rates / Noncurrent assets", "c. Current rates / Noncurrent assets", "d. Historical rates / Current assets"], correct: "c" },
+        { q: "What is the proper accounting for credit card sales if the company is Affiliated vs Not Affiliated with a bank?", options: ["a. Sale on account / Cash sale", "b. Sale on account / Sale on account", "c. Cash sale / Cash sale", "d. Cash sale / Sale on account"], correct: "d" },
+        { q: "Losses from firm and non-cancellable purchase commitments for inventory should be:", options: ["a. Recognized as Loss and Estimated Liability", "b. Disclosed in notes", "c. Ignored", "d. Charged to retained earnings"], correct: "a" },
+        { q: "Delta Corp purchased 7,400 shares (actively traded). How should Delta account for this?", options: ["a. Cost method", "b. Equity method", "c. Cost method subject to fair value", "d. Market value method subject to fair value"], correct: "c" },
+        { q: "Which regarding Investment Property is true?\nI. Measured initially at cost\nII. Transaction costs included\nIII. Choice of fair value or cost model", options: ["a. I and II only", "b. I and III only", "c. II and III only", "d. I, II and III"], correct: "d" },
+        { q: "In determining fair value of a biological asset, which should be considered?", options: ["a. Price change", "b. Physical change", "c. Both price and physical change", "d. Neither"], correct: "c" },
+        { q: "Treasury stock acquired at price > par/issue but < book value. Impact on TSE and NBV?", options: ["a. SE: decrease; NBV: increase", "b. SE: increase; NBV: decrease", "c. SE: decrease; NBV: decrease", "d. SE: increase; NBV: increase"], correct: "a" },
+        { q: "Measurement basis for non-monetary exchange (With vs Without Commercial Substance):", options: ["a. FV of asset given / Carrying amt given", "b. Carrying amt given / Carrying amt received", "c. Carrying amt received / FV of asset received", "d. FV of asset given / FV of asset given"], correct: "a" },
+        { q: "Which statement concerning borrowing costs is FALSE?", options: ["a. Includes interest, bank overdrafts, etc.", "b. Costs incurred in relation to borrowed funds", "c. PAS 23 benchmark is to capitalize", "d. Includes exchange differences"], correct: "c" },
+        { q: "Additional revenue from contract variation is allowed under PAS 11 if:", options: ["a. Negotiations advanced/probable acceptance", "b. Standards will be exceeded", "c. Probable approval and reliably measured", "d. Probable approval whether measured or not"], correct: "c" },
+        { q: "Under IAS 20, recognizing intangible assets from government grants (Free/Nominal):", options: ["a. I only (Fair Value)", "b. Either I or II", "c. II only (Nominal)", "d. Neither"], correct: "b" },
+        { q: "Arguments for the 'Income Approach' for government grants include except:", options: ["a. Earned through compliance", "b. Receipts from non-shareholders", "c. Incentive without related costs", "d. Extension of fiscal policies"], correct: "c" },
+        { q: "Holder H altered the amount of a negotiable note from P10,000 to P100,000 then negotiated the note to I. As a result:", options: ["a. If I is a holder in due course, he can require the maker to pay P100,000", "b. If I is not a holder in due course, he can require the maker to pay the sum of P100,000", "c. I cannot require the maker to pay because of the forgery whether or not he is a holder in due course", "d. I is entitled to P10,000 if he is a holder in due course"], correct: "d" },
+        { q: "To call a meeting for the purpose of removing a director of a corporation the required votes of the stockholders is:", options: ["a. majority of the stockholders present", "b. 3/4 of the outstanding capital stock", "c. 2/3 of the outstanding capital stock", "d. majority of the outstanding capital stock"], correct: "d" },
+        { q: "Which of the following instruments is negotiable?", options: ["a. \"Pay to Bearer C P10,000.00\"", "b. \"Pay to C P10,000.00 or his order out of the rental of my house in Manila\"", "c. \"Pay to C P10,000.00 and reimburse yourself out of the rental of my house in Manila\"", "d. \"Pay to the order of C P10,000.00\""], correct: "d" },
+        { q: "Paolo contributed P50,000; Ronald contributed P75,000; and Paul contributed P25,000. Jay is the industrial partner. There is no stipulation regarding profits and losses. The partnership suffered a P300,000 loss. The loss shall be shared by the partners as follows:", options: ["a. P100,000; P100,000; P100,000; and P0", "b. P75,000; P75,000; P75,000; and P75,000", "c. P100,000; P150,000; P50,000; and P0", "d. P100,000; P100,000; P100,000; and P100,000"], correct: "c" },
+        { q: "Case No. 1 - Pedro, manager of XYZ Corp, prepared a board resolution signed individually by a majority of directors for a salary increase. The treasurer refuses to pay, stating it is invalid. Is the treasurer correct?\nCase No. 2 - Jose found a buyer (Pedro) for Maria's land. Maria cancelled the sale but later sold it to Pedro privately. Is Jose entitled to commission?", options: ["a. YES; YES", "b. YES; NO", "c. NO; NO", "d. NO; YES"], correct: "a" },
+        { q: "1st Statement: Melody bound herself to pay Lucas her indebtedness. \"I promise to pay Lucas or order the amount of Php100,000\". Sgd. Melody. The instrument is non-negotiable.\n2nd Statement: Mila gave Malou a check with blank amount. Mila instructed P1,000, but Malou placed Php100,000 and negotiated to Marissa (HDC).", options: ["a. 1st statement is wrong, 2nd statement is correct", "b. 1st statement is correct, 2nd statement is wrong", "c. Both statements are correct", "d. Both statements are wrong"], correct: "a" },
+        { q: "Maggie makes a promissory note for P40,000 to Homer. Homer negotiates to Margie, who indorse to Henry. Henry raises the amount to P100,000 with the consent of Henry then indorse to Hilary, then to Menandro, then to Helen (HDC). In this case:", options: ["a. Helen can recover P40,000 as against Maggie.", "b. Helen can recover P100,000 from Maggie.", "c. Menandro and Melissa are liable to Helen for P40,000", "d. Maggie and Homer are not liable to Helen."], correct: "a" },
+        { q: "X-cited Limited partnership has X as general partner, Y as limited partner, and Z as industrial partner contributing P150,000; P500,000; and services. The partnership failed with an outstanding obligation of P120,000. Liability is:", options: ["a. X = P120,000", "b. X and Z = solidarily liable for P120,000", "c. X = P40,000; Y = P40,000; Z = P40,000", "d. X = P60,000; Y = P0; Z = P60,000"], correct: "d" },
+        { q: "Which among the following statements is NOT correct?", options: ["a. BIR is part of the machinery for internal revenue taxes.", "b. Bureau of Customs is charged with collection of internal revenue taxes.", "c. Local government units form part of the national tax system.", "d. Private banks may be authorized to collect internal revenue taxes."], correct: "c" },
+        { q: "Properties acquired by gratuitous title during the marriage are generally classified as:\nI. Separate properties under conjugal partnership of gains.\nII. Community properties under absolute community of properties.", options: ["a. Only I is correct", "b. Only II is correct", "c. Both I and II are correct", "d. Both I and II are incorrect"], correct: "a" },
+        { q: "A resident decedent, head of family, left the following: Personal properties P1,000,000; Real properties (including P1.5M family home) P2,000,000; Deductions P900,000. How much was the taxable net estate?", options: ["a. P250,000", "b. P1,100,000", "c. P1,250,000", "d. P2,100,000"], correct: "a" },
+        { q: "Marzan sold his residential house in 2008: Cash P100k; June receipt P100k; 2009 installment P600k. Cost P150k; Mortgage assumed P200k; Buyer's mortgage to seller P600k; FMV P900k. What is capital gains tax due in 2008?", options: ["a. P15,882", "b. P17,647", "c. P54,000", "d. P60,000"], correct: "b" },
+        { q: "Which of the following government-owned or controlled corporations shall be subject to the corporate income tax?\nI. Philippine Amusement and Gaming Corporation (PAGCOR).\nII. National Development Corporation (NDC).\nIII. Philippine Charity Sweepstakes Office (PCSO).\nIV. Social Security System (SSS).", options: ["a. I and II", "b. II and III", "c. III only", "d. I, II, III and IV"], correct: "c" },
+        { q: "The following fringe benefits were given by an employer to its employees for the quarter ending March 31, 2008:\nHousing benefits to supervisors and managers (total rents): P340,000\nReimbursed expenses of rank and file employees: 200,000\nDe minimis benefits (not exceeding maximum): 100,000\nHow much was the fringe benefit tax payable for the quarter?", options: ["a. P80,000", "b. P108,800", "c. P160,000", "d. P172,800"], correct: "a" },
+        { q: "The BIR may compromise payment of internal revenue taxes when:\nFirst ground: A reasonable doubt as to the validity of the claim against the taxpayer exists.\nSecond ground: When collection costs do not justify the collection of the tax.", options: ["a. Both grounds are correct", "b. Both grounds are incorrect", "c. Only first ground is correct", "d. Only second ground is correct"], correct: "c" },
+        { q: "AUDITING THEORY: The need for assurance services arises because:", options: ["a. There is a consonance of interests of the preparer and the user of the financial statements.", "b. There is a potential bias in providing information.", "c. Economic transactions are less complex than they were a decade ago.", "d. Most users today have access to the system that generates the financial statements they use."], correct: "b" },
+        { q: "Which of the following is explicitly included in the Auditor’s responsibility section of the auditor's report?", options: ["a. Reason for modification of opinion", "b. \"Philippine Financial Reporting Standards\"", "c. \"Philippines Standards on Auditing\"", "d. Division of responsibility with another auditor"], correct: "c" },
+        { q: "The term \"present fairly, in all material respect\", means:", options: ["a. The financial statements conform to GAAP.", "b. The auditor considers only those matters that are significant to the users of the financial statements.", "c. The financial statements may still be materially misstated because the auditors may not have discovered the errors.", "d. The financial statements are accurately prepared."], correct: "b" },
+        { q: "Based on R.A. 9298, how many years can a partner who survived the death or withdrawal of other partner(s) continue to practice under the partnership name after becoming a sole practitioner?", options: ["a. 1 year", "b. 2 years", "c. 3 years", "d. Indefinite period of time"], correct: "b" },
+        { q: "An auditor who discovers that client employees have committed an illegal act that has a material effect on the client's financial statements most likely would withdraw from the engagement if:", options: ["a. The illegal act is violation of generally accepted accounting principles.", "b. The client does not take the remedial action that the auditor considers necessary.", "c. The illegal act was committed during a prior year that was not audited.", "d. The auditor has already assessed control risk at the minimum level."], correct: "b" },
+        { q: "Which of the following statements would least likely appear in an auditor's engagement letter?", options: ["a. Fees for our services are based on our regular per diem rates, plus travel and other out-of-pocket expenses.", "b. During the course of our audit we may observe opportunities for economy in, or improved controls over, your operations.", "c. Our engagement is subject to the risk that material errors or fraud, including defalcations, if they exist, will not be detected.", "d. After performing our preliminary analytical procedures we will discuss with you the other procedures we consider necessary to complete the engagement."], correct: "d" },
+        { q: "The audit work paper that reflects the major components of an amount reported in the financial statements is the:", options: ["a. Inter-bank transfer schedule", "b. Carry forward schedule", "c. Supporting schedule", "d. Lead schedule"], correct: "d" },
+        { q: "Which of the following best describes the primary purpose of audit procedures?", options: ["a. To detect errors or fraud", "b. To comply with generally accepted accounting principles", "c. To gather sufficient, appropriate evidence", "d. To verify the accuracy of account balances"], correct: "c" },
+        { q: "Analytical procedures used in planning an audit should focus on identifying:", options: ["a. Material weakness in the internal control system.", "b. The predictability of financial data from individual transactions.", "c. The various assertions that are embodied in the financial statements", "d. Areas that may represent specific risks relevant to the audit."], correct: "d" },
+        { q: "As the acceptable level of detection risk decreases, an auditor may change the...", options: ["a. Timing of substantive tests; perform them at an interim date rather than at year-end", "b. Nature of substantive tests; select from less effective to a more effective procedure.", "c. Timing of tests of controls; perform them at several dates rather than at one time", "d. Assessment of inherent risk; assume a higher level."], correct: "b" },
+        { q: "The audit work performed by each assistant should be reviewed to determine whether it was adequately performed and to evaluate whether the", options: ["a. Audit has been performed by persons having adequate technical training and proficiency as auditors.", "b. Auditor's system of quality control has been maintained at a high level.", "c. Results are consistent with the conclusions to be presented in the auditor's report.", "d. Audit procedures performed are those prescribed in the technical standards."], correct: "c" },
+        { q: "Which of the following acts are considered a fraud?\nI. Alteration of records or documents.\nII. Misinterpretation of facts.\nIII. Misappropriation of assets.\nIV. Recording of transactions without substance.\nV. Clerical mistakes.", options: ["a. III", "b. I and III only", "c. I, III, and IV only", "d. All of them"], correct: "c" },
         { q: "When the auditor has to determine the need to use the work of an expert, he would consider the following except:", options: ["a. The cost of using the services of an expert.", "b. The quantity and quality of other audit evidence available.", "c. The materiality of the financial statement item being considered", "d. The risk of misstatement based on the nature and complexity of the matter being considered."], correct: "a" },
         { q: "Which of the following does not require the services of an expert?", options: ["a. Valuations of certain types of assets like land and buildings.", "b. Legal opinions concerning interpretations of engagements, rules and regulations.", "c. Determination of amounts using specialized techniques.", "d. Application of accounting methods in computing inventory balances."], correct: "d" },
         { q: "An auditor should design a written audit program so that:", options: ["a. All material transactions will be selected for substantive testing.", "b. Substantive tests prior to the balance sheet date will be minimized.", "c. The audit procedures selected will achieve specific audit objectives.", "d. Each account balance will be tested under either tests of controls or tests of transactions."], correct: "c" },
@@ -118,6 +118,116 @@
                 "d. Purchase all units as needed."
             ], 
             correct: "b" 
+        },
+        { 
+            q: "St. Christopher’s Motors, Inc. is considering making a motor internally (unit cost P20.00) or buying it for P21.00. Making it requires leasing machinery for P45,000 and warehouse space for P39,000. However, the warehouse space currently used (costing P54,000) can be eliminated if they make the motors. \n\nInternal unit costs:\n• Direct material: P8.00\n• Direct labor: P4.00\n• Variable overhead: P3.00\n• Allocated fixed overhead: P5.00\n\nA cost-benefit analysis would show that the company would save:", 
+            options: [
+                "a. P54,000 by purchasing from outside", 
+                "b. P69,000 by purchasing from outside", 
+                "c. P81,000 by making the motors internally", 
+                "d. P96,000 by making the motors internally"
+            ], 
+            correct: "c" 
+        },
+        { 
+            q: "Compute the economic value added for St. Vincent:\n• EBIT: P20,000\n• Interest-bearing liabilities: P50,000 (10% annual interest)\n• Debt to equity ratio: 1:1\n• Tax rate: 40%\n• Cost of equity capital: 14%\n(Note: No significant current liabilities)", 
+            options: [
+                "a. P8,000.00", 
+                "b. P2,000.00", 
+                "c. P5,600.00", 
+                "d. P0"
+            ], 
+            correct: "b" 
+        },
+        { 
+            q: "Based on the following budget data for WR Limited:\n• 10,000 hrs: P13,468\n• 12,000 hrs: P14,162\n• 16,000 hrs: P15,549\n• 18,000 hrs: P16,242\n\nActual March 2002 activity: 13,780 hours. Actual overhead: P14,521. The total overhead expenditure variance is nearest to:", 
+            options: [
+                "a. P1,750 (F)", 
+                "b. P250 (F)", 
+                "c. P250 (A)", 
+                "d. P4,520 (A)"
+            ], 
+            correct: "b" 
+        },
+        { 
+            q: "In the context of budget preparation, the term 'goal congruence' is...", 
+            options: [
+                "a. The alignment of budgets with objectives using feed-forward control", 
+                "b. The setting of a budget which does not include budget bias", 
+                "c. The alignment of corporate objectives with the personal objectives of a manager", 
+                "d. The use of aspiration levels to set efficiency targets"
+            ], 
+            correct: "c" 
+        },
+        { 
+            q: "MNP plc produces three products from a single raw material that is limited in supply. \n\nProduct details for period 6:\n• Maximum demand: M (1,000), N (2,400), P (2,800)\n• Unit Contribution: M (P4.50), N (P4.80), P (2.95)\n• Raw materials cost per unit (at P0.50/kg): M (P1.25), N (P1.50), P (0.75)\n\nPlanned production optimizes the use of 6,000 kgs of available material. A new supplier can provide a further 1,000 kgs. \n\nWhat is the maximum price that MNP plc should be prepared to pay for the additional 1,000 kgs of the material?", 
+            options: [
+                "a. P2,100", 
+                "b. P2,240", 
+                "c. P2,300", 
+                "d. P2,465"
+            ], 
+            correct: "b" 
+        },
+        { 
+            q: "T plc has developed a new product, the TF8. The time taken to produce the first unit was 18 minutes. Assuming that an 80% learning curve applies, the time allowed for the fifth unit (to 2 decimal places) should be:\n(Note: For an 80% learning curve y = ax^-0.3219)", 
+            options: [
+                "a. 5.79 minutes", 
+                "b. 7.53 minutes", 
+                "c. 10.72 minutes", 
+                "d. 11.52 minutes"
+            ], 
+            correct: "b" 
+        },
+        { 
+            q: "Which of the following are required to determine the breakeven sales value in a multi-product manufacturing environment?\n(i) individual product gross contribution to sales ratios;\n(ii) the general fixed cost;\n(iii) the product-specific fixed cost;\n(iv) the product mix ratio;\n(v) the method of apportionment of general fixed costs.", 
+            options: [
+                "a. (i), (ii), (iii) and (iv) only.", 
+                "b. (i), (iii) and (iv) only.", 
+                "c. (i), (ii) and (iv) only.", 
+                "d. All of them."
+            ], 
+            correct: "a" 
+        },
+        { 
+            q: "The cost of purchasing a machine is P100,000 payable immediately. Its disposal value is expected to be P10,000 in five years' time. The same asset can be leased for a period of five years with rentals of P25,000 payable annually in advance. The asset is returned to the lessor at the end of the lease period.\n\nWhat is the net present value (to the nearest P10) to the lessor company if it purchases the machine then leases it to the user on the above terms if it applies an annual discount rate of 10%? (Ignore tax.)", 
+            options: [
+                "a. P990", 
+                "b. P10,460", 
+                "c. minus P1,960", 
+                "d. minus P11,440"
+            ], 
+            correct: "b" 
+        },
+        { 
+            q: "A company retains 70% of its earnings and distributes the remaining 30%. Capital investment projects generate an annual post-tax return on investment of 15% and a pre-tax return of 20%. Using the Gordon Growth Model, what is the annual rate of growth?", 
+            options: [
+                "a. 4.5%", 
+                "b. 6.0%", 
+                "c. 10.5%", 
+                "d. 14.0%"
+            ], 
+            correct: "c" 
+        },
+        { 
+            q: "A company uses the Baumol cash management model. Cash disbursements are constant at P20,000 each month. Money on deposit earns 5% a year, while money in the current account earns a zero return. Switching costs (that is, for each purchase or sale of securities) are P30 for each transaction. \n\nWhat is the optimal amount (to the nearest P100) to be transferred in each transaction?", 
+            options: [
+                "a. P500", 
+                "b. P1,700", 
+                "c. P4,900", 
+                "d. P17,000"
+            ], 
+            correct: "d" 
+        },
+        { 
+            q: "Using the capital asset pricing model (CAPM), the beta of company X's shares is 1.6, the risk free rate is 5% and the required return on company X's shares is 16.2%. Company Y is quoted in the same stock market, but has a beta of 1.4. \n\nWhat is the required rate of return on company Y's shares?", 
+            options: [
+                "a. 12.0%", 
+                "b. 13.0%", 
+                "c. 13.2%", 
+                "d. 14.8%"
+            ], 
+            correct: "d" 
         }
     ];
 
